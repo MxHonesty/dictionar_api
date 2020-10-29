@@ -21,7 +21,6 @@ from dex import views
 
 router = routers.DefaultRouter()
 router.register(r'cuvinte', views.CuvantViewSet, basename="cuvinte")
-router.register(r'definitii', views.DefinitieViewSet, basename="definitii")
 
 urlpatterns = [
     path('', include(router.urls)),

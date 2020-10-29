@@ -9,10 +9,3 @@ class CuvantViewSet(viewsets.ModelViewSet):
     queryset = Cuvant.objects.all()
     serializer_class = CuvantSerializer
     permission_classes = [permissions.IsAuthenticated]
-
-
-class DefinitieViewSet(viewsets.ModelViewSet):
-    """ API ENDPOINT care permite vizualizarea sau editarea definitiilor. """
-    queryset = Cuvant.objects.all()
-    serializer_class = DefinitieSerializer
-    permission_classes = [permissions.IsAuthenticated]
