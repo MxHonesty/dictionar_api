@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Cuvant, Definitie
 
-# Register your models here.
+
+admin.site.register(Cuvant)
+admin.site.register(Definitie)
