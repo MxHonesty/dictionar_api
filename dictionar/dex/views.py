@@ -1,10 +1,8 @@
 from rest_framework import viewsets
-from django.shortcuts import get_object_or_404
 from rest_framework import permissions
 from .models import Cuvant, Definitie
 from rest_framework.response import Response
-from .serializers import CuvantSerializer, DefinitieSerializer
-from rest_framework.decorators import action
+from .serializers import CuvantSerializer
 
 
 class CuvantViewSet(viewsets.ModelViewSet):
@@ -20,8 +18,10 @@ class CuvantViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
 
-    def retrieve(self, request, pk=None):
-        queryset = Cuvant.objects.all()
-        cuvant = get_object_or_404(queryset, pk=pk)
+    def retrieve(self, request, cuvant_text=None, pk=None):
+        try:
+            cuvant = Cuvant.objects.get(cuvant_text=cuvant_text)
+        except Cuvant.DoesNotExist: 
+            cuvant = Cuvant
         serializer = CuvantSerializer(cuvant)
         return Response(serializer.data)

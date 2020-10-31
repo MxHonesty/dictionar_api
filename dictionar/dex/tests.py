@@ -1,3 +1,3 @@
 from django.test import TestCase
-
-# Create your tests here.
+from .dictionary import pregatire_definitie, fetch_definition
+from .models import Cuvant
