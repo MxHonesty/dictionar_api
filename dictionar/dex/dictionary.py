@@ -40,8 +40,11 @@ def fetch_definition(cuvant):
         Date de iesire: definitia cuvantului ca string. """
     link = generate_link(cuvant)
     pagina = fetch_page_html(link)
-    definitie = return_def(pagina)
-    definitie = pregatire_definitie(definitie)
+    try:
+        definitie = return_def(pagina)
+        definitie = pregatire_definitie(definitie)
+    except ValueError:
+        definitie = None
     return definitie
 
 
