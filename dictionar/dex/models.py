@@ -11,7 +11,7 @@ class Cuvant(models.Model):
     
     def __str__(self):
         return self.cuvant_text
-    
+        
 
 class Definitie(models.Model):
     """ Modelul din baza de date pentru o definitie. 
